@@ -14,6 +14,7 @@ const TabsLayout = () => {
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={24} />
           ),
+          title: "Home",
         }}
       />
       <Tabs.Screen
@@ -23,6 +24,7 @@ const TabsLayout = () => {
           tabBarIcon: ({ color }) => (
             <Foundation name="heart" color={color} size={24} />
           ),
+          title: "WISHLIST",
         }}
       />
       <Tabs.Screen
@@ -32,6 +34,7 @@ const TabsLayout = () => {
           tabBarIcon: ({ color }) => (
             <FontAwesome5 name="shopping-bag" color={color} size={24} />
           ),
+          title: "BAG",
         }}
       />
     </Tabs>
