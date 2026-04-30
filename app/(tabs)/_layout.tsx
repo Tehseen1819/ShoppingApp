@@ -10,6 +10,7 @@ const TabsLayout = () => {
       <Tabs.Screen
         name="home"
         options={{
+          headerShown: false,
           tabBarLabel: "HOME",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={24} />
