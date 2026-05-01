@@ -48,7 +48,7 @@ const card = () => {
               <Text style={styles.moveToCardButton}>Move to Cart</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.moveToWishList}>
-              <Foundation name="heart" color={"#B80041"} size={20} />
+              <Foundation name="heart" color={"#B80041"} size={24} />
             </TouchableOpacity>
           </View>
         </View>
@@ -63,11 +63,10 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     flexDirection: "column",
-    justifyContent:"center",
-    alignItems:"flex-start",
+    justifyContent: "center",
+    alignItems: "flex-start",
     padding: 10,
     marginBottom: 10,
-    // borderWidth: 2,
   },
   productImage: {
     height: 390,
@@ -77,19 +76,20 @@ const styles = StyleSheet.create({
   productName: {
     marginTop: 10,
     marginBottom: 10,
-    fontWeight:"600",
-    fontSize:20,
+    fontWeight: "600",
+    fontSize: 20,
   },
   productPrice: {
     marginBottom: 10,
     color: "#B80041",
-    fontWeight:"600",
-    fontSize:20,
+    fontWeight: "600",
+    fontSize: 20,
   },
   buttonCartAndWishlist: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
+    gap: 10,
   },
   moveToCartButtonContainer: {
     padding: 10,
@@ -101,7 +101,9 @@ const styles = StyleSheet.create({
     color: "white",
   },
   moveToCardButton: {
-    color: "#F5F5F6",
+    color: "#ffffff",
+    fontWeight: "600",
+    fontSize: 15,
   },
   moveToWishList: {
     color: "#B80041",
@@ -110,6 +112,6 @@ const styles = StyleSheet.create({
     width: 45,
     height: 45,
     borderRadius: 22.5,
-    backgroundColor: "#fff",
+    backgroundColor: "white",
   },
 });
