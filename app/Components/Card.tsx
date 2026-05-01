@@ -15,32 +15,40 @@ const card = () => {
       id: 1,
       image:
         "https://plus.unsplash.com/premium_photo-1664202526475-8f43ee70166d?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      name: "T-shirt",
-      price: 10,
+      name: "T-Wool Blazer",
+      price: "$560.00",
     },
     {
       id: 2,
       image:
-        "https://plus.unsplash.com/premium_photo-1664202526475-8f43ee70166d?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1517472292914-9570a594783b?q=80&w=2033&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Plated Silk midi",
+      price: "$580.00",
+    },
+    {
+      id: 3,
+      image:
+        "https://plus.unsplash.com/premium_photo-1673125510222-1a51e3a8ccb0?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       name: "Shirt",
-      price: 10,
+      price: "$960.00",
     },
   ];
   return (
     <FlatList
       data={data}
+      showsVerticalScrollIndicator={false}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => (
         <View style={styles.card}>
           <Image style={styles.productImage} source={{ uri: item.image }} />
-          <Text style={styles.itemName}>{item.name}</Text>
-          <Text style={styles.price}>Price :{item.price}</Text>
+          <Text style={styles.productName}>{item.name}</Text>
+          <Text style={styles.productPrice}>{item.price}</Text>
           <View style={styles.buttonCartAndWishlist}>
-            <TouchableOpacity style={styles.MoveToCartButton}>
-              <Text>Move to Cart</Text>
+            <TouchableOpacity style={styles.moveToCartButtonContainer}>
+              <Text style={styles.moveToCardButton}>Move to Cart</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.moveToWishList}>
-              <Foundation name="heart" color={"#B80041"} size={24} />
+              <Foundation name="heart" color={"#B80041"} size={20} />
             </TouchableOpacity>
           </View>
         </View>
@@ -55,43 +63,53 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     flexDirection: "column",
-    height: "80%",
-    width: "100%",
-    padding: 45,
-    marginBottom: 40,
-    borderWidth: 2,
+    justifyContent:"center",
+    alignItems:"flex-start",
+    padding: 10,
+    marginBottom: 10,
+    // borderWidth: 2,
   },
   productImage: {
-    height: 300,
+    height: 390,
     width: "100%",
     borderRadius: 10,
   },
-  itemName: {
-    marginTop: 5,
+  productName: {
+    marginTop: 10,
     marginBottom: 10,
+    fontWeight:"600",
+    fontSize:20,
   },
-  price: {},
+  productPrice: {
+    marginBottom: 10,
+    color: "#B80041",
+    fontWeight:"600",
+    fontSize:20,
+  },
   buttonCartAndWishlist: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  MoveToCartButton: {
+  moveToCartButtonContainer: {
     padding: 10,
     backgroundColor: "#B80041",
     justifyContent: "center",
     alignItems: "center",
     width: "80%",
-    borderRadius: 10,
-    marginRight: 10,
+    borderRadius: 50,
+    color: "white",
+  },
+  moveToCardButton: {
+    color: "#F5F5F6",
   },
   moveToWishList: {
     color: "#B80041",
     justifyContent: "center",
     alignItems: "center",
-    width: "20%",
-    borderRadius: "30%",
-    borderWidth:1,
-    // backgroundColor: "white",
+    width: 45,
+    height: 45,
+    borderRadius: 22.5,
+    backgroundColor: "#fff",
   },
 });
