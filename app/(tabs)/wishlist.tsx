@@ -1,13 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function wishlist() {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text>Wishlist</Text>
-      </View>
+      <Text>Wishlist</Text>
     </SafeAreaView>
   );
 }
