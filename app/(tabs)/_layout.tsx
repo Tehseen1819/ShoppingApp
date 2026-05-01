@@ -12,6 +12,8 @@ const TabsLayout = () => {
         options={{
           headerShown: false,
           tabBarLabel: "HOME",
+          tabBarActiveTintColor: "#B80041",
+          tabBarInactiveTintColor: "gray",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={24} />
           ),
@@ -21,17 +23,23 @@ const TabsLayout = () => {
       <Tabs.Screen
         name="wishlist"
         options={{
+          headerShown: false,
           tabBarLabel: "WISHLIST",
+          tabBarActiveTintColor: "#B80041",
+          tabBarInactiveTintColor: "gray",
           tabBarIcon: ({ color }) => (
             <Foundation name="heart" color={color} size={24} />
           ),
-          title: "WISHLIST",
+          // title: "WISHLIST",
         }}
       />
       <Tabs.Screen
         name="bag"
         options={{
+          headerShown: false,
           tabBarLabel: "BAG",
+          tabBarActiveTintColor: "#B80041",
+          tabBarInactiveTintColor: "gray",
           tabBarIcon: ({ color }) => (
             <FontAwesome5 name="shopping-bag" color={color} size={24} />
           ),
