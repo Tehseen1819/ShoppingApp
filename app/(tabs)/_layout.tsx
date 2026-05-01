@@ -30,7 +30,7 @@ const TabsLayout = () => {
           tabBarIcon: ({ color }) => (
             <Foundation name="heart" color={color} size={24} />
           ),
-          // title: "WISHLIST",
+          title: "WISHLIST",
         }}
       />
       <Tabs.Screen
