@@ -2,7 +2,7 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const CrartCard = () => {
+const CartCard = () => {
   return (
     <SafeAreaView>
       <Image
@@ -26,7 +26,7 @@ const CrartCard = () => {
   );
 };
 
-export default CrartCard;
+export default CartCard;
 
 const styles = StyleSheet.create({
   container: {
@@ -58,17 +58,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontWeight: "800",
     fontSize: 20,
-
   },
   counterButton: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor:"#9e9d9d",
-    justifyContent:"space-evenly",
-    alignItems:"center",
-    width:110,
-    borderRadius:50,
-    
-
+    backgroundColor: "#bb5b5b",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    width: 110,
+    borderRadius: 50,
   },
 });
