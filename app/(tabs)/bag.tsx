@@ -1,13 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function bag() {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text>Bag</Text>
-      </View>
+      <Text>Bag</Text>
     </SafeAreaView>
   );
 }
