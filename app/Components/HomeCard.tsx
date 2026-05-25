@@ -2,7 +2,7 @@ import Foundation from "@expo/vector-icons/Foundation";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const card = ({ product }) => {
+const HomeCard = ({ product }) => {
   return (
     <View style={styles.card}>
       <Image style={styles.productImage} source={{ uri: product.image }} />
@@ -20,7 +20,7 @@ const card = ({ product }) => {
   );
 };
 
-export default card;
+export default HomeCard;
 
 const styles = StyleSheet.create({
   card: {

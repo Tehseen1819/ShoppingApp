@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Card from "../Components/Card";
+import HomeCard from "../Components/HomeCard";
 
 const data = [
   {
@@ -33,7 +33,7 @@ export default function home() {
         data={data}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <Card product={item} />}
+        renderItem={({ item }) => <HomeCard product={item} />}
       />
     </SafeAreaView>
   );
@@ -46,3 +46,4 @@ const styles = StyleSheet.create({
     backgroundColor: "#f6f6f7",
   },
 });
+

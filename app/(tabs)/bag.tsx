@@ -1,12 +1,16 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import CartCard from "../Components/CartCard";
+import BagCard from "../Components/BagCard";
 
 export default function bag() {
   return (
     <SafeAreaView style={styles.container}>
-      <CartCard />
+      <ScrollView>
+        <BagCard />
+        <BagCard />
+        <BagCard />
+      </ScrollView>
     </SafeAreaView>
   );
 }
