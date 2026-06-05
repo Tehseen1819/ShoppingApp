@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FlatList, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { CartContext } from "../cartContext";
 import HomeCard from "../Components/HomeCard";
 
 const data = [
@@ -27,13 +28,25 @@ const data = [
   },
 ];
 export default function home() {
+  const { cart, setCart } = useContext(CartContext);
+
+  const handleAddToCart = (item) => {
+    setCart([...cart, item]);
+    console.log(cart);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
         data={data}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <HomeCard product={item} />}
+        renderItem={({ item }) => (
+          <HomeCard
+            product={item}
+            onPressAddToCart={() => handleAddToCart(item)}
+          />
+        )}
       />
     </SafeAreaView>
   );
@@ -46,4 +59,3 @@ const styles = StyleSheet.create({
     backgroundColor: "#f6f6f7",
   },
 });
-

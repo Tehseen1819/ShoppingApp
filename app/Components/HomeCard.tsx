@@ -2,14 +2,14 @@ import Foundation from "@expo/vector-icons/Foundation";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const HomeCard = ({ product }) => {
+const HomeCard = ({ product ,onPressAddToCart}) => {
   return (
     <View style={styles.card}>
       <Image style={styles.productImage} source={{ uri: product.image }} />
       <Text style={styles.productName}>{product.name}</Text>
       <Text style={styles.productPrice}>{product.price}</Text>
       <View style={styles.buttonCartAndWishlist}>
-        <TouchableOpacity style={styles.moveToCartButtonContainer}>
+        <TouchableOpacity style={styles.moveToCartButtonContainer} onPress={onPressAddToCart}>
           <Text style={styles.moveToCardButton}>Move to Cart</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.moveToWishList}>

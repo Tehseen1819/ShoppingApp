@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const CartCard = () => {
+const CartCard = ({ product }) => {
   function decrease() {
     if (counter === 1) {
       return;
@@ -18,11 +18,11 @@ const CartCard = () => {
       <Image
         style={styles.productImage}
         source={{
-          uri: "https://plus.unsplash.com/premium_photo-1664202526475-8f43ee70166d?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          uri: product.image,
         }}
       />
-      <Text style={styles.productName}>Crimson Silk Midi</Text>
-      <Text style={styles.productPrice}>Rs 4,299</Text>
+      <Text style={styles.productName}>{product.name}</Text>
+      <Text style={styles.productPrice}>{product.price}</Text>
       <View style={styles.counterButton}>
         <TouchableOpacity onPress={decrease}>
           <Text style={{ fontSize: 20 }}>-</Text>
@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "flex-start",
     padding: 10,
-    
   },
   productImage: {
     height: 390,

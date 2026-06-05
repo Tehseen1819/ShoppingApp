@@ -1,16 +1,20 @@
-import React from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import React, { useContext } from "react";
+import { FlatList, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { CartContext } from "../cartContext";
 import BagCard from "../Components/BagCard";
 
 export default function bag() {
+  const { cart, setCart } = useContext(CartContext);
+
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <BagCard />
-        <BagCard />
-        <BagCard />
-      </ScrollView>
+      <FlatList
+        data={cart}
+        showsVerticalScrollIndicator={false}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({item}) => <BagCard product={item} />}
+      />
     </SafeAreaView>
   );
 }
