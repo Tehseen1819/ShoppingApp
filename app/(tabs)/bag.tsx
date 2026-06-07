@@ -6,6 +6,10 @@ import BagCard from "../Components/BagCard";
 
 export default function bag() {
   const { cart, setCart } = useContext(CartContext);
+  const handleDelete = (item) => {
+    const updatedCart = cart.filter((cartItem) => cartItem.id !== item.id);
+    setCart(updatedCart);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -13,7 +17,9 @@ export default function bag() {
         data={cart}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <BagCard product={item} />}
+        renderItem={({ item }) => (
+          <BagCard product={item} onPressDelete={() => handleDelete(item)} />
+        )}
         ListEmptyComponent={
           <View
             style={{

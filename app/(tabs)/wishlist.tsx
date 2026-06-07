@@ -8,9 +8,15 @@ import { WishlistContext } from "../wishlistContext";
 export default function wishlist() {
   const { wishlist, setWishlist } = useContext(WishlistContext);
   const { cart, setCart } = useContext(CartContext);
+  
   const handleMoveToCart = (item) => {
     setCart([...cart, item]);
+    const updatedWishlist = wishlist.filter(
+      (wishlistItem) => wishlistItem.id !== item.id,
+    );
+    setWishlist(updatedWishlist);
   };
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList

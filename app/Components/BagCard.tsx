@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const CartCard = ({ product }) => {
+const CartCard = ({ product ,onPressDelete }) => {
   function decrease() {
     if (counter === 1) {
       return;
@@ -23,14 +23,23 @@ const CartCard = ({ product }) => {
       />
       <Text style={styles.productName}>{product.name}</Text>
       <Text style={styles.productPrice}>{product.price}</Text>
-      <View style={styles.counterButton}>
-        <TouchableOpacity onPress={decrease}>
-          <Text style={{ fontSize: 20 }}>-</Text>
-        </TouchableOpacity>
-        <Text style={{ fontSize: 20 }}>{counter}</Text>
-        <TouchableOpacity onPress={increase}>
-          <Text style={{ fontSize: 20 }}>+</Text>
-        </TouchableOpacity>
+      <View style={styles.buttons}>
+        <View style={styles.counterButton}>
+          <TouchableOpacity onPress={decrease}>
+            <Text style={{ fontSize: 20 }}>-</Text>
+          </TouchableOpacity>
+          <Text style={{ fontSize: 20 }}>{counter}</Text>
+          <TouchableOpacity onPress={increase}>
+            <Text style={{ fontSize: 20 }}>+</Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{ backgroundColor: "#b3a8a8", padding: 12, borderRadius: 10 }}
+        >
+          <TouchableOpacity onPress={onPressDelete}>
+            <Text>Delete</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -67,6 +76,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontWeight: "800",
     fontSize: 20,
+  },
+  buttons: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    paddingRight: 30,
   },
   counterButton: {
     flexDirection: "row",
