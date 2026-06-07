@@ -3,6 +3,7 @@ import { FlatList, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { CartContext } from "../cartContext";
 import HomeCard from "../Components/HomeCard";
+import { WishlistContext } from "../wishlistContext";
 
 const data = [
   {
@@ -29,10 +30,13 @@ const data = [
 ];
 export default function home() {
   const { cart, setCart } = useContext(CartContext);
+  const { wishlist, setWishlist } = useContext(WishlistContext);
 
   const handleAddToCart = (item) => {
     setCart([...cart, item]);
-    console.log(cart);
+  };
+  const handleAddToWishlist = (item) => {
+    setWishlist([...wishlist, item]);
   };
 
   return (
@@ -45,6 +49,7 @@ export default function home() {
           <HomeCard
             product={item}
             onPressAddToCart={() => handleAddToCart(item)}
+            onPressAddToWishlist={() => handleAddToWishlist(item)}
           />
         )}
       />

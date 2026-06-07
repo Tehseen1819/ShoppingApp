@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { CartContext } from "../cartContext";
 import BagCard from "../Components/BagCard";
@@ -13,7 +13,19 @@ export default function bag() {
         data={cart}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({item}) => <BagCard product={item} />}
+        renderItem={({ item }) => <BagCard product={item} />}
+        ListEmptyComponent={
+          <View
+            style={{
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: 300,
+            }}
+          >
+            <Text>Nothing is here</Text>
+          </View>
+        }
       />
     </SafeAreaView>
   );
