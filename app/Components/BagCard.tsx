@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const CartCard = ({ product ,onPressDelete }) => {
+const CartCard = ({ product, onPressDelete }) => {
+  const [counter, setCounter] = useState(1);
   function decrease() {
     if (counter === 1) {
       return;
@@ -12,7 +13,7 @@ const CartCard = ({ product ,onPressDelete }) => {
   function increase() {
     setCounter((counter) => counter + 1);
   }
-  const [counter, setCounter] = useState(1);
+
   return (
     <View style={styles.card}>
       <Image
